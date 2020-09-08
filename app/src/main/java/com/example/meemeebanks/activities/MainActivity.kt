@@ -18,6 +18,7 @@ import com.example.meemeebanks.data.vos.BankVO
 import com.example.meemeebanks.mvp.presenters.MainPresenter
 import com.example.meemeebanks.mvp.views.MainView
 import com.example.meemeebanks.ui.adapters.BankRecyclerAdapter
+import com.facebook.shimmer.ShimmerFrameLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(),MainView {
@@ -37,7 +38,9 @@ class MainActivity : BaseActivity(),MainView {
     }
 
     override fun showBanksList(bankList: List<BankVO>) {
+        rv_banks.visibility = View.VISIBLE
         rvBankAdapter.setNewData(bankList as ArrayList<BankVO>)
+        showAnim(shimmer_rv_banks,false)
     }
 
     override fun showError(error: String) {
@@ -51,6 +54,10 @@ class MainActivity : BaseActivity(),MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        showAnim(shimmer_rv_banks,true)
+        shimmer_rv_banks.visibility = View.VISIBLE
+        shimmer_rv_banks.startShimmerAnimation()
 
         mPresenter = ViewModelProviders.of(this).get(MainPresenter::class.java)
         mPresenter.initPresenter(this)
@@ -78,12 +85,13 @@ class MainActivity : BaseActivity(),MainView {
             }
     }
 
-    private fun setUpAnimations(){
-        with(window) {
-            requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
-            val fade = Fade()
-            fade.duration = 600
-            exitTransition = fade
+    private fun showAnim(shimmer: ShimmerFrameLayout, anim: Boolean) {
+        if (anim) {
+            shimmer.visibility = View.VISIBLE
+            shimmer.startShimmerAnimation()
+        } else {
+            shimmer.visibility = View.GONE
+            shimmer.stopShimmerAnimation()
         }
     }
 }

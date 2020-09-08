@@ -60,4 +60,7 @@ dependencies {
     //Glide for images
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //For loading animation
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 }
