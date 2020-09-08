@@ -56,16 +56,15 @@
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="75dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="40dp"
                         android:text="My Wallet" />
 
                     <TextView
-                        android:id="@+id/tv_user_name"
                         style="@style/TitleAppearance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="40dp"
                         android:layout_alignParentLeft="true"
                         android:layout_below="@id/tv_my_wallet"
                         android:text="3505 . 00  $" />

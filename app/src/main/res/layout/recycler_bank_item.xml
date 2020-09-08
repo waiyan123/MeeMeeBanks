@@ -16,12 +16,14 @@
 
     <ImageView
         android:id="@+id/img_bank_item"
+        android:transitionName="logo_transition"
         android:src="@drawable/ic_account_circle_black_24dp"
         android:layout_margin="10dp"
         android:layout_width="150dp"
         android:layout_height="50dp"/>
     <TextView
         android:id="@+id/tv_bank_item"
+        android:transitionName="title_transition"
         android:text="AYA Bank"
         android:layout_margin="10dp"
         android:layout_width="wrap_content"

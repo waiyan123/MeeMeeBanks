@@ -10,7 +10,10 @@
 
     <dimen name="main_banner_height">200dp</dimen>
 
+
     <dimen name="user_profile_size">50dp</dimen>
+
+    <dimen name="logo_bank_details">100dp</dimen>
 
     <dimen name="action_bar_size">70dp</dimen>
 

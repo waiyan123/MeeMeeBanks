@@ -1,6 +1,8 @@
 package com.example.meemeebanks.mvp.presenters
 
 import android.content.Context
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.example.meemeebanks.activities.BaseActivity
@@ -27,7 +29,7 @@ class MainPresenter : BasePresenter<MainView>(), KoinComponent {
                 })
     }
 
-    fun onClickedBankItem(id : Int) {
-
+    fun onClickedBankItem(index : Int,imgView : ImageView,textView : TextView) {
+        mView.navigateToBankDetail(bankVOList[index],imgView,textView)
     }
 }

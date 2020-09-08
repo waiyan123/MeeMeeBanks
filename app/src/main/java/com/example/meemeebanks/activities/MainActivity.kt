@@ -1,7 +1,16 @@
 package com.example.meemeebanks.activities
 
+import android.os.Build
 import android.os.Bundle
+import android.transition.Fade
 import android.util.Log
+import android.view.View
+import android.view.Window
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.meemeebanks.R
@@ -13,8 +22,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(),MainView {
 
-    override fun navigateToBankDetail(bankVO: BankVO) {
+    override fun navigateToBankDetail(bankVO: BankVO,imageView : ImageView,textView: TextView) {
+        val intent = DetailsActivity.newIntent(this)
+        intent.putExtra(DetailsActivity.BANK_VO_KEY,bankVO)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val imagePair = Pair.create(imageView as View, "logo_transition")
+            val titlePair = Pair.create(textView as View,"title_transition")
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,imagePair,titlePair)
+            ActivityCompat.startActivity(this,intent,options.toBundle())
+        } else {
+            startActivity(intent)
+        }
     }
 
     override fun showBanksList(bankList: List<BankVO>) {
@@ -42,9 +61,9 @@ class MainActivity : BaseActivity(),MainView {
 
     fun setUpRvBank() {
 
-        rvBankAdapter = BankRecyclerAdapter{
-                mPresenter.onClickedBankItem(it)
-            }
+        rvBankAdapter = BankRecyclerAdapter{ i,imageView,textView ->
+            mPresenter.onClickedBankItem(i,imageView,textView)
+        }
 
             with(rv_banks) {
                 setHasFixedSize(true)
@@ -57,5 +76,14 @@ class MainActivity : BaseActivity(),MainView {
                 adapter = rvBankAdapter
 
             }
+    }
+
+    private fun setUpAnimations(){
+        with(window) {
+            requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+            val fade = Fade()
+            fade.duration = 600
+            exitTransition = fade
+        }
     }
 }
