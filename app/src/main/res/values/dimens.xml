@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_width_percent_main">0.4</dimen>
+    <dimen name="card_height_percent_main">0.2</dimen>
+
+    <dimen name="main_icon_size">30dp</dimen>
+    <dimen name="menu_sub_layout_padding">30dp</dimen>
+    <dimen name="menu_card_margin">20dp</dimen>
+    <dimen name="primary_card_radius">25dp</dimen>
+
+    <dimen name="main_banner_height">200dp</dimen>
+
+    <dimen name="user_profile_size">50dp</dimen>
+
+    <dimen name="action_bar_size">70dp</dimen>
+
+    <dimen name="menu_item_margin">35dp</dimen>
+</resources>

@@ -3,4 +3,17 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="light_grey">#FFFFFF</color>
+    <color name="text_color1">#1c2e4a</color>
+
+    <color name="start_color">#80A2A3A3</color>
+    <color name="center_color">#804F4F50</color>
+    <color name="end_color">#80010203</color>
+
+    <color name="action_bar_color">#801c2e4a</color>
+
+    <color name="banner_background">#3895D3</color>
+    <color name="banner_background_transparent">#805BCCED</color>
 </resources>

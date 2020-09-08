@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:elevation="5dp"
+    android:gravity="center"
+    android:id="@+id/linearLayout">
+
+    <ImageView
+        android:id="@+id/custom_toast_image"
+        android:scaleType="centerCrop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="logo image"
+        android:src="@mipmap/ic_launcher_bank_round"
+        />
+
+    <TextView
+        android:id="@+id/custom_toast_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/text_color1"
+        android:contentDescription="To"
+        android:text="Toast" />
+
+</LinearLayout>

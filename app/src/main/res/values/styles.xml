@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:fontFamily">@font/cybertooth_font</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="menu_text_style">
+        <item name="android:textColor">@color/center_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/cybertooth_font</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="main_title_banks_style">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:textColor">@color/end_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
 </resources>
